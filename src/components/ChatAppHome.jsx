@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import io from "socket.io-client";
 
-const socket = io("https://chat-app-backend-beta-tan.vercel.app");
+const socket = io("https://chat-app-backend-beta-tan.vercel.app", {
+  withCredentials: true,
+});
 
 const ChatAppHome = () => {
   const [userName, setUserName] = useState("");
