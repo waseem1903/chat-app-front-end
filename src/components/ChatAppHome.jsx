@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import io from "socket.io-client";
 
-const socket = io("http://localhost:5000");
+const socket = io("https://chat-app-backend-beta-tan.vercel.app");
 
 const ChatAppHome = () => {
   const [userName, setUserName] = useState("");
@@ -56,7 +56,7 @@ const ChatAppHome = () => {
 
   const handleShowJoinRoomPage = async () => {
     try {
-      const response = await fetch("http://localhost:5000/rooms");
+      const response = await fetch("https://chat-app-backend-beta-tan.vercel.app/rooms");
       const data = await response.json();
       setFetchedRooms(data);
       setShowJoinRoomPage(!showJoinRoomPage);
